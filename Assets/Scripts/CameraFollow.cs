@@ -21,13 +21,13 @@ public class CameraFollow : MonoBehaviour {
 	bool lookAheadStopped;
 
 	void Start() {
-		focusArea = new FocusArea (target.GetComponent<Collider2D>().bounds, focusAreaSize);
+		focusArea = new FocusArea (target.collider.bounds, focusAreaSize);
 	}
 
 	void LateUpdate() {
-        focusArea.Update(target.GetComponent<Collider2D>().bounds);
+		focusArea.Update (target.collider.bounds);
 
-        Vector2 focusPosition = focusArea.centre + Vector2.up * verticalOffset;
+		Vector2 focusPosition = focusArea.centre + Vector2.up * verticalOffset;
 
 		if (focusArea.velocity.x != 0) {
 			lookAheadDirX = Mathf.Sign (focusArea.velocity.x);
