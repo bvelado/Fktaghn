@@ -10,7 +10,8 @@ public class trapping : MonoBehaviour {
         if (collider.tag != "Player")
         {
            GameObject gameObjectTrap = GameObject.Find("Trap");
-           gameObjectTrap.transform.position = new Vector3(transform.position.x + 0.02f, transform.position.y);       
+           // gameObjectTrap.transform.
+            gameObjectTrap.transform.position = new Vector3(transform.position.x + 0.02f, transform.position.y);       
         }
 
     }
