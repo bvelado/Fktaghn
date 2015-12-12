@@ -22,7 +22,6 @@ public class ShotScript : MonoBehaviour
         if (collider.tag != "Enemy")
         {
             Destroy(gameObject);
-        }
-       
+        }       
     }
 }
