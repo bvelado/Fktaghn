@@ -35,7 +35,7 @@ public class Controller2D : RaycastController {
 		}
 
 		HorizontalCollisions (ref velocity);
-		if (velocity.y != 0 || collisions.climbingWall) {
+		if (velocity.y != 0 || collisions.climbingWall ) {
 			VerticalCollisions (ref velocity);
 		}
 
@@ -103,7 +103,7 @@ public class Controller2D : RaycastController {
 			}
 		}
 	}
-	
+
 	void VerticalCollisions(ref Vector3 velocity) {
 		float directionY = Mathf.Sign (velocity.y);
 		float rayLength = Mathf.Abs (velocity.y) + skinWidth;
@@ -126,12 +126,27 @@ public class Controller2D : RaycastController {
 					}
 					if (playerInput.y == -1) {
 						collisions.fallingThroughPlatform = true;
-						Invoke("ResetFallingThroughPlatform",.5f);
+						Invoke("ResetFallingThroughPlatform",0.5f);
 						continue;
 					}
-				}
+				} else if (hit.collider.tag == "StickyWall") {
+                    if(directionY != -1)
+                    {
+                        Debug.Log("Stick");
+                        velocity.y = 0.0f;
+                        collisions.stuckToTheCeiling = true;
+                        continue;
+                    }
+                }
 
-				velocity.y = (hit.distance - skinWidth) * directionY;
+                if(collisions.stuckToTheCeiling && directionY != 1)
+                {
+                    Debug.Log("Unstick");
+                    collisions.stuckToTheCeiling = false;
+                    continue;
+                }
+
+                velocity.y = (hit.distance - skinWidth) * directionY;
 				rayLength = hit.distance;
 
 				if (collisions.climbingSlope) {
@@ -200,7 +215,7 @@ public class Controller2D : RaycastController {
 		collisions.fallingThroughPlatform = false;
 	}
 
-	public struct CollisionInfo {
+    public struct CollisionInfo {
 		public bool above, below;
 		public bool left, right;
 
@@ -211,6 +226,7 @@ public class Controller2D : RaycastController {
 		public Vector3 velocityOld;
 		public int faceDir;
 		public bool fallingThroughPlatform;
+        public bool stuckToTheCeiling;
 
 		public void Reset() {
 			above = below = false;

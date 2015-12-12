@@ -106,17 +106,22 @@ public class Player : MonoBehaviour {
 			}
 		}
 
-        if(!controller.collisions.climbingWall)
-        {
-            velocity.y += gravity * Time.deltaTime;
-        } else
+        if (controller.collisions.climbingWall)
         {
             float targetVelocityY = input.y * wallClimbSpeed;
             velocity.y = Mathf.SmoothDamp(velocity.y, targetVelocityY, ref velocityYSmoothing, accelerationTimeClimibingWall);
         }
+        else if (controller.collisions.stuckToTheCeiling)
+        {
+            if(input.y < 0 ) {
+                velocity.y = -maxJumpVelocity;
+            }
+        } else { 
+            velocity.y += gravity * Time.deltaTime;
+        }
 		controller.Move (velocity * Time.deltaTime, input);
 
-		if (controller.collisions.above || controller.collisions.below) {
+		if (controller.collisions.below || controller.collisions.above) {
 			velocity.y = 0;
             // REMET LE COMPTEUR DE SAUT A 0
             timeJumped = 0;
