@@ -9,25 +9,32 @@ public class Player : MonoBehaviour {
 	public float timeToJumpApex = .4f;
 	float accelerationTimeAirborne = .2f;
 	float accelerationTimeGrounded = .1f;
-	float moveSpeed = 6;
+    float moveSpeed = 6;
 
     int timeJumped = 0;
+    
+    // Wall walking
+    float accelerationTimeClimibingWall = .1f;
+    float wallClimbSpeed = 5;
 
+    /*
 	public Vector2 wallJumpClimb;
 	public Vector2 wallJumpOff;
 	public Vector2 wallLeap;
 
-	public float wallSlideSpeedMax = 3;
+    public float wallSlideSpeedMax = 3;
 	public float wallStickTime = .25f;
 	float timeToWallUnstick;
+    */
 
-	float gravity;
+    float gravity;
 	float maxJumpVelocity;
 	float minJumpVelocity;
 	Vector3 velocity;
 	float velocityXSmoothing;
+    float velocityYSmoothing;
 
-	Controller2D controller;
+    Controller2D controller;
 
 	void Start() {
 		controller = GetComponent<Controller2D> ();
@@ -88,6 +95,7 @@ public class Player : MonoBehaviour {
 
 			if (controller.collisions.below || (timeJumped == 1)) {
 				velocity.y = maxJumpVelocity;
+                // +1 JUMP
                 timeJumped++;
 			}
 		}
@@ -97,8 +105,15 @@ public class Player : MonoBehaviour {
 				velocity.y = minJumpVelocity;
 			}
 		}
-	
-		velocity.y += gravity * Time.deltaTime;
+
+        if(!controller.collisions.climbingWall)
+        {
+            velocity.y += gravity * Time.deltaTime;
+        } else
+        {
+            float targetVelocityY = input.y * wallClimbSpeed;
+            velocity.y = Mathf.SmoothDamp(velocity.y, targetVelocityY, ref velocityYSmoothing, accelerationTimeClimibingWall);
+        }
 		controller.Move (velocity * Time.deltaTime, input);
 
 		if (controller.collisions.above || controller.collisions.below) {

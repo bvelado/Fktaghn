@@ -35,7 +35,7 @@ public class Controller2D : RaycastController {
 		}
 
 		HorizontalCollisions (ref velocity);
-		if (velocity.y != 0) {
+		if (velocity.y != 0 || collisions.climbingWall) {
 			VerticalCollisions (ref velocity);
 		}
 
@@ -62,14 +62,20 @@ public class Controller2D : RaycastController {
 			Debug.DrawRay(rayOrigin, Vector2.right * directionX * rayLength,Color.red);
 
 			if (hit) {
-
 				if (hit.distance == 0) {
-					continue;
+                    // Passe au raycast suivant (itération de for suivante)
+                    // Lorsque le joueur passe a travers un plafond
+                    continue;
 				}
-			
-				float slopeAngle = Vector2.Angle(hit.normal, Vector2.up);
 
-				if (i == 0 && slopeAngle <= maxClimbAngle) {
+                if (hit.collider.tag == "StickyWall")
+                {
+                    collisions.climbingWall = true;
+                }
+
+                float slopeAngle = Vector2.Angle(hit.normal, Vector2.up);
+
+				if (i == 0 && slopeAngle <= maxClimbAngle && !collisions.climbingWall) {
 					if (collisions.descendingSlope) {
 						collisions.descendingSlope = false;
 						velocity = collisions.velocityOld;
@@ -200,6 +206,7 @@ public class Controller2D : RaycastController {
 
 		public bool climbingSlope;
 		public bool descendingSlope;
+        public bool climbingWall;
 		public float slopeAngle, slopeAngleOld;
 		public Vector3 velocityOld;
 		public int faceDir;
@@ -210,6 +217,7 @@ public class Controller2D : RaycastController {
 			left = right = false;
 			climbingSlope = false;
 			descendingSlope = false;
+            climbingWall = false;
 
 			slopeAngleOld = slopeAngle;
 			slopeAngle = 0;

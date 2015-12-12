@@ -3189,7 +3189,7 @@ GameObject:
   - 61: {fileID: 1522395819}
   m_Layer: 8
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: StickyWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
