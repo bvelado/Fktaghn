@@ -11,6 +11,8 @@ public class Player : MonoBehaviour {
 	float accelerationTimeGrounded = .1f;
 	float moveSpeed = 6;
 
+    int timeJumped = 0;
+
 	public Vector2 wallJumpClimb;
 	public Vector2 wallJumpOff;
 	public Vector2 wallLeap;
@@ -43,7 +45,7 @@ public class Player : MonoBehaviour {
 		float targetVelocityX = input.x * moveSpeed;
 		velocity.x = Mathf.SmoothDamp (velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below)?accelerationTimeGrounded:accelerationTimeAirborne);
 
-		bool wallSliding = false;
+		/*bool wallSliding = false;
 		if ((controller.collisions.left || controller.collisions.right) && !controller.collisions.below && velocity.y < 0) {
 			wallSliding = true;
 
@@ -66,10 +68,10 @@ public class Player : MonoBehaviour {
 				timeToWallUnstick = wallStickTime;
 			}
 
-		}
+		}*/
 
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			if (wallSliding) {
+		if (Input.GetButtonDown ("Jump")) {
+			/*if (wallSliding) {
 				if (wallDirX == input.x) {
 					velocity.x = -wallDirX * wallJumpClimb.x;
 					velocity.y = wallJumpClimb.y;
@@ -82,23 +84,27 @@ public class Player : MonoBehaviour {
 					velocity.x = -wallDirX * wallLeap.x;
 					velocity.y = wallLeap.y;
 				}
-			}
-			if (controller.collisions.below) {
+			}*/
+
+			if (controller.collisions.below || (timeJumped == 1)) {
 				velocity.y = maxJumpVelocity;
+                timeJumped++;
 			}
 		}
-		if (Input.GetKeyUp (KeyCode.Space)) {
+
+		if (Input.GetButtonUp ("Jump")) {
 			if (velocity.y > minJumpVelocity) {
 				velocity.y = minJumpVelocity;
 			}
 		}
-
 	
 		velocity.y += gravity * Time.deltaTime;
 		controller.Move (velocity * Time.deltaTime, input);
 
 		if (controller.collisions.above || controller.collisions.below) {
 			velocity.y = 0;
+            // REMET LE COMPTEUR DE SAUT A 0
+            timeJumped = 0;
 		}
 
 	}
