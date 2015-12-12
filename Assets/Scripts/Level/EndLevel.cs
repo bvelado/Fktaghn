@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class EndLevel : MonoBehaviour {
-    void OnTriggerEnter(Collider col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         if (col.name == "Player")
         {

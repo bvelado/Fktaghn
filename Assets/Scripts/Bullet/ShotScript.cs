@@ -15,11 +15,14 @@ public class ShotScript : MonoBehaviour
     /// <summary>
     /// Projectile damage player or enemies?
     /// </summary>
-    public bool isEnemyShot = false;
+    public bool isEnemyShot = true;
 
-    void Start()
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        // 2 - Limited time to live to avoid any leak
-        Destroy(gameObject, 20); // 20sec
+        if (collider.tag != "Enemy")
+        {
+            Destroy(gameObject);
+        }
+       
     }
 }
