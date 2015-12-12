@@ -20,17 +20,19 @@ public class MoveScript : MonoBehaviour
 
     private Vector2 movement;
 
+    void Start()
+    {
+        GetComponent<Rigidbody2D>().AddForce(speed, ForceMode2D.Impulse);
+    }
+
     void Update()
     {
-        // 2 - Movement
-        movement = new Vector2(
-          speed.x * direction.x,
-          speed.y * direction.y);
+       
     }
     
     void FixedUpdate()
     {
         // Apply movement to the rigidbody
-        GetComponent<Rigidbody2D>().velocity = movement;
+        //GetComponent<Rigidbody2D>().velocity = movement;
     }
 }
