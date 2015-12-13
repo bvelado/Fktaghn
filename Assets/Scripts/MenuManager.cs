@@ -9,8 +9,8 @@ public class MenuManager : MonoBehaviour {
 
     public GameObject CenterPanel, OptionsPanel, CreditsPanel;
 
-    //public Slider volumeSlider;
-    //public Toggle checkMute;
+    public Slider volumeSlider;
+    public Toggle checkMute;
 
     void OnAwake()
     {
@@ -53,9 +53,6 @@ public class MenuManager : MonoBehaviour {
    }
 
 
-
-   //------------------------------OPTION
-<<<<<<< HEAD
    public void OnChangeSliderVolume()
    {
        PlayerPrefs.SetString("VolumeValue", volumeSlider.value.ToString());
@@ -67,26 +64,4 @@ public class MenuManager : MonoBehaviour {
         Debug.Log("Mute : " + (checkMute.isOn? "Yup" : "Nope"));
         PlayerPrefs.SetString("VolumeValue", checkMute.isOn?"true":"false");
    }
-=======
-//   public void OnChangeSliderVolume()
-//   {
-//<<<<<<< HEAD
-//       PlayerPrefs.SetString("VolumeValue", volumeSlider.value.ToString());
-//       Debug.Log("Changed Volume value to " + volumeSlider.value.ToString());
-//=======
-//     //  PlayerPrefs.SetString("VolumeValue", GameObject.Find("SliderVolume").GetComponent<Slider>().value.ToString());
-//>>>>>>> 4abeda6057b1337b3505fad44ed766bdce207ff2
-//   }
-
-//   public void OnChangeCheckMuteVolume()
-//   {
-//<<<<<<< HEAD
-//        Debug.Log("Mute : " + (checkMute.isOn? "Yup" : "Nope"));
-//        PlayerPrefs.SetString("VolumeValue", checkMute.isOn?"true":"false");
-//=======
-//       //if (GameObject.Find("SliderVolume").GetComponent<Toggle>().isOn == true)
-//       //    PlayerPrefs.SetString("VolumeValue", "0");
-//>>>>>>> 4abeda6057b1337b3505fad44ed766bdce207ff2
-//   }
->>>>>>> f84cc2e5dd5c7e432b6b8206d0330a617b5fa8a6
 }

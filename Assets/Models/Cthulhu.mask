@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1011 &101100000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Cthulhu
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Auiles
+    m_Weight: 1
+  - m_Path: Auiles001
+    m_Weight: 1
+  - m_Path: DMy_Master_Head
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bone001
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bone001/Bone002
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bone001/Bone005
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bone001/Bone007
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bone008
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bone008/Bone009
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bone008/Bone010
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bone008/Bone011
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_01
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_01/Bones_Tentacle_1_02
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_01/Bones_Tentacle_1_02/Bones_Tentacle_1_03
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_01/Bones_Tentacle_1_02/Bones_Tentacle_1_03/Bones_Tentacle_1_04
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_01/Bones_Tentacle_1_02/Bones_Tentacle_1_03/Bones_Tentacle_1_04/Bones_Tentacle_1_05
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_006
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_006/Bones_Tentacle_1_007
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_006/Bones_Tentacle_1_007/Bones_Tentacle_1_008
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_006/Bones_Tentacle_1_007/Bones_Tentacle_1_008/Bones_Tentacle_1_009
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_006/Bones_Tentacle_1_007/Bones_Tentacle_1_008/Bones_Tentacle_1_009/Bones_Tentacle_1_010
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_011
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_011/Bones_Tentacle_1_012
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_011/Bones_Tentacle_1_012/Bones_Tentacle_1_013
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_011/Bones_Tentacle_1_012/Bones_Tentacle_1_013/Bones_Tentacle_1_014
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_011/Bones_Tentacle_1_012/Bones_Tentacle_1_013/Bones_Tentacle_1_014/Bones_Tentacle_1_015
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_016
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_016/Bones_Tentacle_1_017
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_016/Bones_Tentacle_1_017/Bones_Tentacle_1_018
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_016/Bones_Tentacle_1_017/Bones_Tentacle_1_018/Bones_Tentacle_1_019
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_016/Bones_Tentacle_1_017/Bones_Tentacle_1_018/Bones_Tentacle_1_019/Bones_Tentacle_1_020
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_021
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_021/Bones_Tentacle_1_035
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_021/Bones_Tentacle_1_035/Bones_Tentacle_1_031
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_021/Bones_Tentacle_1_035/Bones_Tentacle_1_031/Bones_Tentacle_1_030
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_021/Bones_Tentacle_1_035/Bones_Tentacle_1_031/Bones_Tentacle_1_030/Bones_Tentacle_1_032
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_033
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_033/Bones_Tentacle_1_022
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_033/Bones_Tentacle_1_022/Bones_Tentacle_1_029
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_033/Bones_Tentacle_1_022/Bones_Tentacle_1_029/Bones_Tentacle_1_024
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_033/Bones_Tentacle_1_022/Bones_Tentacle_1_029/Bones_Tentacle_1_024/Bones_Tentacle_1_023
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_034
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_034/Bones_Tentacle_1_027
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_034/Bones_Tentacle_1_027/Bones_Tentacle_1_025
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_034/Bones_Tentacle_1_027/Bones_Tentacle_1_025/Bones_Tentacle_1_028
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_034/Bones_Tentacle_1_027/Bones_Tentacle_1_025/Bones_Tentacle_1_028/Bones_Tentacle_1_026
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Eye_L
+    m_Weight: 1
+  - m_Path: DMy_Master_Head/Bones_Head/Eye_R
+    m_Weight: 1
+  - m_Path: Octhulhu
+    m_Weight: 1

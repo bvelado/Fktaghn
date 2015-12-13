@@ -37,6 +37,8 @@ public class Player : MonoBehaviour {
 
     Controller2D controller;
 
+    GameObject avatar;
+
 	void Start() {
 
 		controller = GetComponent<Controller2D> ();
@@ -44,12 +46,20 @@ public class Player : MonoBehaviour {
 		gravity = -(2 * maxJumpHeight) / Mathf.Pow (timeToJumpApex, 2);
 		maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
 		minJumpVelocity = Mathf.Sqrt (2 * Mathf.Abs (gravity) * minJumpHeight);
-		print ("Gravity: " + gravity + "  Jump Velocity: " + maxJumpVelocity);
+
+        avatar = transform.FindChild("Avatar").gameObject;
 	}
 
 	void Update() {
 		Vector2 input = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
 		int wallDirX = (controller.collisions.left) ? -1 : 1;
+        if (controller.collisions.faceDir == -1)
+        {
+            avatar.transform.localEulerAngles = (new Vector3(0, 180));
+        } else
+        {
+            avatar.transform.localEulerAngles = new Vector3(0, 0);
+        }
 
 		float targetVelocityX = input.x * moveSpeed;
 		velocity.x = Mathf.SmoothDamp (velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below)?accelerationTimeGrounded:accelerationTimeAirborne);
