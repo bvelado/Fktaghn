@@ -31,6 +31,7 @@ public class PriestBehaviour : MonoBehaviour {
 	void Update () {
 	    if(state == PriestState.Patrol)
         {
+            Debug.Log(waypointIndex);
             transform.DOMove(new Vector3(3, 0, 0), patrolSpeed);
             if (Vector3.SqrMagnitude(waypointsPositions[waypointIndex] - transform.position) < 0.0001)
             {
