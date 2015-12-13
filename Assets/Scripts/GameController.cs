@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class GameController : MonoBehaviour {
 
@@ -8,6 +9,7 @@ public class GameController : MonoBehaviour {
 
     public void Awake()
     {
+        DOTween.Init(false, true, LogBehaviour.ErrorsOnly);
         DontDestroyOnLoad(this);
         instance = this;
     }
