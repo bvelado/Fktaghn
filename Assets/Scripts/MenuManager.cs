@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
-//using System.Collections;
+//using UnityEngine.UI;
+using System.Collections;
 
 
 
@@ -47,12 +47,12 @@ public class MenuManager : MonoBehaviour {
    //------------------------------OPTION
    public void OnChangeSliderVolume()
    {
-       PlayerPrefs.SetString("VolumeValue", GameObject.Find("SliderVolume").GetComponent<Slider>().value.ToString());
+     //  PlayerPrefs.SetString("VolumeValue", GameObject.Find("SliderVolume").GetComponent<Slider>().value.ToString());
    }
 
    public void OnChangeCheckMuteVolume()
    {
-       if (GameObject.Find("SliderVolume").GetComponent<Toggle>().isOn == true)
-           PlayerPrefs.SetString("VolumeValue", "0");
+       //if (GameObject.Find("SliderVolume").GetComponent<Toggle>().isOn == true)
+       //    PlayerPrefs.SetString("VolumeValue", "0");
    }
 }
