@@ -17,7 +17,7 @@ public class ProjectileLine : MonoBehaviour
 
     void FixedUpdate()
     {
-        GetComponent<Rigidbody2D>().velocity = movement;
+      //  GetComponent<Rigidbody2D>().velocity = movement;
     }
 }
 
