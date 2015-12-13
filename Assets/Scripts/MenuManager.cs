@@ -7,8 +7,11 @@ using UnityEngine.UI;
 public class MenuManager : MonoBehaviour {
 
 
-    public GameObject CenterPanel;
-    public GameObject OptionsPanel;
+    public GameObject CenterPanel, OptionsPanel, CreditsPanel;
+
+    public Slider volumeSlider;
+    public Toggle checkMute;
+
     void OnAwake()
     {
         OnClickBack();
@@ -17,6 +20,7 @@ public class MenuManager : MonoBehaviour {
     public void OnClickBack()
     {
         OptionsPanel.SetActive(false);
+        CreditsPanel.SetActive(false);
         CenterPanel.SetActive(true);
     }
 
@@ -37,6 +41,12 @@ public class MenuManager : MonoBehaviour {
 
    }
 
+    public void OnClickCredits()
+    {
+        CenterPanel.SetActive(false);
+        CreditsPanel.SetActive(true);
+    }
+
    public void OnClickQuit()
    {
        Application.Quit();
@@ -47,12 +57,13 @@ public class MenuManager : MonoBehaviour {
    //------------------------------OPTION
    public void OnChangeSliderVolume()
    {
-       PlayerPrefs.SetString("VolumeValue", GameObject.Find("SliderVolume").GetComponent<Slider>().value.ToString());
+       PlayerPrefs.SetString("VolumeValue", volumeSlider.value.ToString());
+       Debug.Log("Changed Volume value to " + volumeSlider.value.ToString());
    }
 
    public void OnChangeCheckMuteVolume()
    {
-       if (GameObject.Find("SliderVolume").GetComponent<Toggle>().isOn == true)
-           PlayerPrefs.SetString("VolumeValue", "0");
+        Debug.Log("Mute : " + (checkMute.isOn? "Yup" : "Nope"));
+        PlayerPrefs.SetString("VolumeValue", checkMute.isOn?"true":"false");
    }
 }
