@@ -14,21 +14,25 @@ public class GameController : MonoBehaviour {
         instance = this;
     }
 
+
+
 	void Start () {
-        //GameObject.FindGameObjectWithTag("Musique").GetComponent<AudioSource>().Play();
         currentlevel = 1;
         print("Top à la vachette");
-        LoadLevel("Level " + currentlevel);
-	}
-	
-	void Update () {
-	
+        LoadLevel("MainMenu");
 	}
 
     public void Next()
     {
         currentlevel ++;
         LoadLevel("Level " + currentlevel);
+    }
+
+
+    public void LoadSpecificLevel(int level)
+    {
+        currentlevel = level;
+        LoadLevel("Level " + level);
     }
 
     private void LoadLevel(string level)
