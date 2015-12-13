@@ -41,7 +41,6 @@ public class PriestBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var worldTouch = Camera.main.ScreenToWorldPoint(gameObject.transform.position);
         RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), transform.right, distanceDetec, playerMask);
 
         if (hit != null && hit.collider != null)

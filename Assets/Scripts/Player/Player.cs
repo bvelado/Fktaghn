@@ -7,6 +7,7 @@ public class Player : MonoBehaviour {
 	public float maxJumpHeight = 4;
 	public float minJumpHeight = 1;
 	public float timeToJumpApex = .4f;
+    public LayerMask enemyMask;
 	float accelerationTimeAirborne = .2f;
 	float accelerationTimeGrounded = .1f;
     float moveSpeed = 6;
@@ -77,6 +78,19 @@ public class Player : MonoBehaviour {
 			}
 
 		}*/
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Debug.DrawRay(gameObject.transform.position, gameObject.transform.position, Color.green);
+            RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), transform.right, 20, enemyMask);
+            if (hit != null && hit.collider != null)
+            {
+                if (hit.collider.gameObject.GetComponent<PriestBehaviour>().convertable == true)
+                {
+                    Destroy(hit.collider.gameObject);
+                }
+            }
+        }
+
 
 		if (Input.GetButtonDown ("Jump")) {
 			/*if (wallSliding) {

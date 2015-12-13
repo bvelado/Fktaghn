@@ -1501,7 +1501,7 @@ GameObject:
   - 114: {fileID: 807955914}
   - 114: {fileID: 807955913}
   - 114: {fileID: 807955911}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1583,6 +1583,7 @@ MonoBehaviour:
   destination: {x: 0, y: 0, z: 0}
   patrolSpeed: 5
   distanceDetec: 20
+  convertable: 0
 --- !u!114 &807955913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1761,6 +1762,9 @@ MonoBehaviour:
   maxJumpHeight: 1.9
   minJumpHeight: 0.8
   timeToJumpApex: 0.3
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!114 &822903881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3335,7 +3339,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1462818601}
   - 114: {fileID: 1462818602}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4400,7 +4404,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1975982352}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
