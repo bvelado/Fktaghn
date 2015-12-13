@@ -29,13 +29,13 @@ public class MenuManager : MonoBehaviour {
    {
        GameController.Instance.LoadSpecificLevel(1);
    }
-   
-   //public void OnClickOptions()
-   //{
-   //    CenterPanel.SetActive(false);
-   //    OptionsPanel.SetActive(true);
-       
-   //}
+
+   public void OnClickOptions()
+   {
+       CenterPanel.SetActive(false);
+       OptionsPanel.SetActive(true);
+
+   }
 
    public void OnClickQuit()
    {
@@ -44,15 +44,15 @@ public class MenuManager : MonoBehaviour {
 
 
 
-   // //------------------------------OPTION
-   //public void OnChangeSliderVolume()
-   //{
-   //    PlayerPrefs.SetString("VolumeValue", GameObject.Find("SliderVolume").GetComponent<Slider>().value.ToString());
-   //}
+   //------------------------------OPTION
+   public void OnChangeSliderVolume()
+   {
+       PlayerPrefs.SetString("VolumeValue", GameObject.Find("SliderVolume").GetComponent<Slider>().value.ToString());
+   }
 
-   //public void OnChangeCheckMuteVolume()
-   //{
-   //    if (GameObject.Find("SliderVolume").GetComponent<Toggle>().isOn == true)
-   //    PlayerPrefs.SetString("VolumeValue", "0");
-   //}
+   public void OnChangeCheckMuteVolume()
+   {
+       if (GameObject.Find("SliderVolume").GetComponent<Toggle>().isOn == true)
+           PlayerPrefs.SetString("VolumeValue", "0");
+   }
 }
