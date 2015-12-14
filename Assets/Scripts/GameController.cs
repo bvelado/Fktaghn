@@ -24,7 +24,7 @@ public class GameController : MonoBehaviour {
 
 
 	void Start () {
-		currentlevel = SceneManager.GetActiveScene().name;
+		currentlevel = SceneManager.GetActiveScene().buildIndex;
       print("Top à la vachette");
 	}
     
@@ -33,7 +33,7 @@ public class GameController : MonoBehaviour {
     public void Next()
     {
         currentlevel ++;
-        LoadLevel("Level " + currentlevel);
+		  LoadLevel( currentlevel );
     }
 
 
@@ -47,6 +47,10 @@ public class GameController : MonoBehaviour {
     {
         SceneManager.LoadScene(level);
     }
+
+	 private void LoadLevel ( int level ) {
+		 SceneManager.LoadScene( level );
+	 }
 
     private static GameController instance = null;
 

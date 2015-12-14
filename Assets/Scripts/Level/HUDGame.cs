@@ -59,8 +59,7 @@ public class HUDGame : MonoBehaviour {
 
     public void CloseGameMenu()
     {
-        Play();
-        OnClickBack();
+		 ResumeGame();
     }
 
     public void ResumeGame()
