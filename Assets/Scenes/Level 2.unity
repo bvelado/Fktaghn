@@ -1131,6 +1131,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 456098650}
   - 114: {fileID: 456098649}
+  - 61: {fileID: 456098651}
   m_Layer: 0
   m_Name: Priest
   m_TagString: Untagged
@@ -1153,8 +1154,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   movement: {x: 4, y: 0, z: 0}
-  patrolSpeed: 2
+  movementDuration: 2
+  rotationDuration: 1
   distanceDetec: 3
+  avatar: {fileID: 626294072}
   convertable: 0
 --- !u!4 &456098650
 Transform:
@@ -1169,6 +1172,20 @@ Transform:
   - {fileID: 626294072}
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!61 &456098651
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 456098648}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0.5}
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 3.5}
 --- !u!1 &503189270
 GameObject:
   m_ObjectHideFlags: 0

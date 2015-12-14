@@ -14,7 +14,8 @@ public class PriestBehaviour : MonoBehaviour
     public LayerMask playerMask;
     private Weapon[] weapons;
     public Vector3 movement;
-    public float patrolSpeed;
+    public float movementDuration;
+	 public float rotationDuration;
     private Vector3 initPosition;
     private float diffVector;
     public int distanceDetec;
@@ -24,6 +25,8 @@ public class PriestBehaviour : MonoBehaviour
     public bool convertable = false;
 
 	 private bool readyLaunch = false;
+
+	 bool facingRight = true;
 
     void Awake()
     {
@@ -36,40 +39,50 @@ public class PriestBehaviour : MonoBehaviour
 		 initPosition = transform.position;
 		 Vector3 targetPosition = initPosition + movement;
 		 state = PriestState.Patrol;
-		 transform.DOMoveX( movement.x, patrolSpeed ).SetRelative().SetLoops( -1, LoopType.Yoyo );
+
+		 Sequence patrolSequence = DOTween.Sequence();
+		 patrolSequence
+			.Append( transform.DOMove( movement + initPosition, movementDuration ) )
+			.Append( transform.DORotate( new Vector3( 0, 0, 0 ), rotationDuration ) )
+			.AppendCallback( () => { facingRight = false; })
+			.Append( transform.DOMove( initPosition, movementDuration ) )
+			.Append( transform.DORotate( new Vector3( 0, 180, 0 ), rotationDuration ) )
+			.AppendCallback( () => { facingRight = true; });
+
+		 patrolSequence.SetLoops( -1, LoopType.Restart );
+
+		 patrolSequence.SetTarget( transform );
+		 transform.DOPlay();
+
+		 Debug.Log(transform.GetComponent<Collider2D>().bounds.max.y);
 	 }
 
 	 void SwitchFaceDir ( int index ) {
 		 transform.DORotate( new Vector3( 0, 0, index * 180 ), 2.0f, RotateMode.Fast );
 	 }
 
+	void FlipX( bool x) {
+		x = !x; 
+	}
+	
     void Update()
     {
-		 Debug.DrawLine(transform.position, transform.right*distanceDetec);
+		 Vector3 raycastDirection = (facingRight) ? Vector3.right :-Vector3.right;
 
-        RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), transform.right, distanceDetec, playerMask);
+		 for (int i = 3; i < 0; i--) {
+			 Debug.Log( "Vlim" );
+			 RaycastHit2D hit = Physics2D.Raycast( new Vector2( transform.position.x, transform.position.y ), raycastDirection, distanceDetec, playerMask );
 
-        if (hit != null && hit.collider != null)
-        {
-            gameObject.transform.DOPause();
-            StartCoroutine(Example());
-        }
-        else
-        {
-            gameObject.transform.DOPlay();
-        }
-
-		  hit = Physics2D.Raycast( new Vector2( transform.position.x, transform.position.y ), -transform.right, distanceDetec, playerMask );
-
-		  if (hit != null && hit.collider != null) {
-			  gameObject.transform.DOPause();
-			  StartCoroutine( Example() );
-		  } else {
-			  gameObject.transform.DOPlay();
-		  }
+			 if (hit != null && hit.collider != null) {
+				 transform.DOPause();
+				 StartCoroutine( Attack() );
+			 } else {
+				 transform.DOPlay();
+			 }
+		 }
     }
 
-    IEnumerator Example()
+    IEnumerator Attack()
     {
         if (readyLaunch == false)
         {
