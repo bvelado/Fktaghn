@@ -9,12 +9,14 @@ public class Controller2D : RaycastController {
 	public CollisionInfo collisions;
 	[HideInInspector]
 	public Vector2 playerInput;
-	
-	public override void Start() {
+
+    public Animator anim;
+    int isFallingHash = Animator.StringToHash("isFalling");
+
+    public override void Start() {
 		base.Start ();
 		collisions.faceDir = 1;
-
-	}
+    }
 	
 	public void Move(Vector3 velocity, bool standingOnPlatform) {
 		Move (velocity, Vector2.zero, standingOnPlatform);
@@ -32,7 +34,12 @@ public class Controller2D : RaycastController {
 
 		if (velocity.y < 0) {
 			DescendSlope(ref velocity);
-		}
+
+            anim.SetBool(isFallingHash, true);
+		} else
+        {
+            anim.SetBool(isFallingHash, false);
+        }
 
 		HorizontalCollisions (ref velocity);
 		if (velocity.y != 0 || collisions.climbingWall ) {

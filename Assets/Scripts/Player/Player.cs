@@ -39,7 +39,13 @@ public class Player : MonoBehaviour {
 
     GameObject avatar;
 
-	void Start() {
+    public Animator anim;
+    int jumpedHash = Animator.StringToHash("Jumped");
+    int doubleJumpedHash = Animator.StringToHash("DoubleJumped");
+    int isGroundedHash = Animator.StringToHash("isGrounded");
+    int isWalkingHash = Animator.StringToHash("isWalking");
+
+    void Start() {
 
 		controller = GetComponent<Controller2D> ();
 
@@ -53,15 +59,20 @@ public class Player : MonoBehaviour {
 	void Update() {
 		Vector2 input = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
 		int wallDirX = (controller.collisions.left) ? -1 : 1;
-        if (controller.collisions.faceDir == -1)
-        {
+        if (controller.collisions.faceDir == -1) {
             avatar.transform.localEulerAngles = (new Vector3(0, 180));
-        } else
-        {
+        } else {
             avatar.transform.localEulerAngles = new Vector3(0, 0);
         }
 
 		float targetVelocityX = input.x * moveSpeed;
+        if(targetVelocityX != 0)
+        {
+            anim.SetBool(isWalkingHash, true);
+        } else
+        {
+            anim.SetBool(isWalkingHash, false);
+        }
 		velocity.x = Mathf.SmoothDamp (velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below)?accelerationTimeGrounded:accelerationTimeAirborne);
 
 		/*bool wallSliding = false;
@@ -122,7 +133,16 @@ public class Player : MonoBehaviour {
 				velocity.y = maxJumpVelocity;
                 // +1 JUMP
                 timeJumped++;
-			}
+
+                anim.SetBool(isGroundedHash, false);
+                if (timeJumped == 1)
+                {
+                    anim.SetTrigger(jumpedHash);
+                } else
+                {
+                    anim.SetTrigger(doubleJumpedHash);
+                }
+            }
 		}
 
 		if (Input.GetButtonUp ("Jump")) {
@@ -144,12 +164,14 @@ public class Player : MonoBehaviour {
         } else { 
             velocity.y += gravity * Time.deltaTime;
         }
+
 		controller.Move (velocity * Time.deltaTime, input);
 
 		if (controller.collisions.below || controller.collisions.above) {
 			velocity.y = 0;
             // REMET LE COMPTEUR DE SAUT A 0
             timeJumped = 0;
+            anim.SetBool(isGroundedHash, true);
 		}
 
 	}
