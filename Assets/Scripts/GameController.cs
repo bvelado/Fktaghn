@@ -6,23 +6,26 @@ using DG.Tweening;
 public class GameController : MonoBehaviour {
 
     public GameObject GameMenuCanvas;
-    
 
-    private int currentlevel = 1;
+    private int currentlevel;
 
     public void Awake()
     {
         DOTween.Init(false, true, LogBehaviour.ErrorsOnly);
-        DontDestroyOnLoad(this);
-        instance = this;
+
+		  if (instance == null) {
+			  instance = this;
+			  DontDestroyOnLoad( this );
+		  } else {
+			  Destroy( this );
+		  }
     }
 
 
 
 	void Start () {
-        currentlevel = 1;
-        print("Top à la vachette");
-        LoadLevel("MainMenu");
+		currentlevel = SceneManager.GetActiveScene().name;
+      print("Top à la vachette");
 	}
     
   
@@ -57,7 +60,7 @@ public class GameController : MonoBehaviour {
 
     public void GoToMainMenu()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void showLife()
@@ -69,4 +72,8 @@ public class GameController : MonoBehaviour {
     {
 
     }
+
+	 public void RestartLevel () {
+		 LoadSpecificLevel( currentlevel );
+	 }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 /// <summary>
 /// Handle hitpoints and damages
@@ -8,12 +9,9 @@ public class Health : MonoBehaviour
     /// <summary>
     /// Total hitpoints
     /// </summary>
-    public int hp = 1;
+    public int hp = 3;
 
-    /// <summary>
-    /// Enemy or player?
-    /// </summary>
-    public bool isEnemy = true;
+	 public bool canLoseHP = true;
 
     /// <summary>
     /// Inflicts damage and check if the object should be destroyed
@@ -22,34 +20,30 @@ public class Health : MonoBehaviour
     public void Damage(int damageCount)
     {
         hp -= damageCount;
+		 Debug.Log("Lose HP");
+
+		 HUDGame.Instance.loseLife();
 
         if (hp <= 0)
         {
-            // Dead!
-            Destroy(gameObject);
+			  GameController.Instance.RestartLevel();
         }
     }
 
-    void OnTriggerEnter2D(Collider2D otherCollider)
+    void OnTriggerEnter2D(Collider2D col)
     {
-
-        // Is this a shot?
-        ShotScript shot = otherCollider.gameObject.GetComponent<ShotScript>();
-
-        if (shot != null)
+        if (col.tag == "Spikes" && canLoseHP)
         {
-            // Avoid friendly fire
-            if (shot.isEnemyShot != isEnemy)
-            {
-                Damage(shot.damage);
+				Damage(1);
+			  canLoseHP = false;
+			  StartCoroutine( ResetCanLoseHP() );
 
-                // Destroy the shot
-                Destroy(shot.gameObject); // Remember to always target the game object, otherwise you will just remove the script
-                return;
-            }
+				return;
         }
-
-
-
     }
+
+	IEnumerator ResetCanLoseHP() {
+		yield return new WaitForSeconds(3.0f);
+		canLoseHP = true;
+	}
 }

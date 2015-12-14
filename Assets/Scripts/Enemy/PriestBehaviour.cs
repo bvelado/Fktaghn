@@ -69,6 +69,8 @@ public class PriestBehaviour : MonoBehaviour
     {
 		 Vector3 raycastDirection = (facingRight) ? Vector3.right :-Vector3.right;
 
+		 Debug.DrawRay( transform.position, raycastDirection );
+
 		 for (int i = 3; i < 0; i--) {
 			 Debug.Log( "Vlim" );
 			 RaycastHit2D hit = Physics2D.Raycast( new Vector2( transform.position.x, transform.position.y ), raycastDirection, distanceDetec, playerMask );

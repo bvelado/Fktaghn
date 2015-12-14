@@ -9,6 +9,7 @@ TagManager:
   - Through
   - StickyWall
   - Enemy
+  - Spikes
   layers:
   - Default
   - TransparentFX
