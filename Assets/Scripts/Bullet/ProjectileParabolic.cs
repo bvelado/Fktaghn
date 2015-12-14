@@ -3,12 +3,18 @@ using System.Collections;
 
 public class ProjectileParabolic : MonoBehaviour {
 
-    public Vector2 speed = new Vector2(10, 10);
+    public Vector2 DirectionTirRight = new Vector2(3, 3);
+    public bool directionShootIsRight = true;
+
 
 	// Use this for initialization
     void Start()
     {
-        GetComponent<Rigidbody2D>().AddForce(speed, ForceMode2D.Impulse);
+        if (!directionShootIsRight)
+        {
+            DirectionTirRight.x = 0 - DirectionTirRight.x;
+        }
+        GetComponent<Rigidbody2D>().AddForce(DirectionTirRight, ForceMode2D.Impulse);
     }
 
 }

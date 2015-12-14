@@ -5,19 +5,17 @@
 /// </summary>
 public class ProjectileLine : MonoBehaviour
 {
-    public Vector2 speed = new Vector2(10, 10);
-    public Vector2 direction = new Vector2(-1, 0);
-    private Vector2 movement;
-    void Update()
-    {
-        movement = new Vector2(
-          speed.x * direction.x,
-          speed.y * direction.y);
-    }
+    public Vector2 DirectionTirRight = new Vector2(10, -5);
+    public bool directionShootIsRight = true;
 
-    void FixedUpdate()
+
+    void Start()
     {
-      //  GetComponent<Rigidbody2D>().velocity = movement;
+        if (!directionShootIsRight)
+        {
+            DirectionTirRight.x = 0 - DirectionTirRight.x;
+        }
+        GetComponent<Rigidbody2D>().AddForce(DirectionTirRight, ForceMode2D.Impulse);
     }
 }
 

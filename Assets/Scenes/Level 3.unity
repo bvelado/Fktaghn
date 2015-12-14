@@ -489,6 +489,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 166226, guid: 7b0c6e48b03976e43aab2cacf62f4279, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b0c6e48b03976e43aab2cacf62f4279, type: 2}
   m_IsPrefabParent: 0
@@ -1607,8 +1611,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea3978bece05c7b499d0bfc2ab8b87f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: {x: 10, y: 10}
-  direction: {x: -1, y: 0}
+  DirectionTirRight: {x: 10, y: 10}
+  directionShootIsRight: 1
 --- !u!1 &815226185
 GameObject:
   m_ObjectHideFlags: 0
@@ -3201,7 +3205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6b29892be6fc4740a402ae86ff4d03a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotPrefab: {fileID: 464734, guid: 6107ba4d6a764e849b3c9865ac442889, type: 2}
+  shotPrefab: {fileID: 419460, guid: db864f5868fce89458198e5090448dbe, type: 2}
   shootingRate: 0.25
 --- !u!1 &1465410700
 GameObject:

@@ -45,7 +45,7 @@ public class Weapon : MonoBehaviour
     /// <summary>
     /// Create a new projectile if possible
     /// </summary>
-    public void Attack(bool isEnemy)
+    public void Attack(bool isEnemy, bool facingRight)
     {
         if (CanAttack)
         {
@@ -62,13 +62,20 @@ public class Weapon : MonoBehaviour
             if (shot != null)
             {
                 shot.isEnemyShot = isEnemy;
+                
             }
 
             // Make the weapon shot always towards it
-            ProjectileLine move = shotTransform.gameObject.GetComponent<ProjectileLine>();
+            ProjectileParabolic move = shotTransform.gameObject.GetComponent<ProjectileParabolic>();
             if (move != null)
             {
-                move.direction = this.transform.right; // towards in 2D space is the right of the sprite
+                move.directionShootIsRight = facingRight;
+            }
+
+            ProjectileLine move2 = shotTransform.gameObject.GetComponent<ProjectileLine>();
+            if (move2 != null)
+            {
+                move2.directionShootIsRight = facingRight;
             }
         }
     }

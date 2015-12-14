@@ -15,18 +15,18 @@ public class PriestBehaviour : MonoBehaviour
     private Weapon[] weapons;
     public Vector3 movement;
     public float movementDuration;
-	 public float rotationDuration;
+    public float rotationDuration;
     private Vector3 initPosition;
     private float diffVector;
     public int distanceDetec;
 
-	 public Transform avatar;
+    public Transform avatar;
 
     public bool convertable = false;
 
-	 private bool readyLaunch = false;
+    private bool readyLaunch = false;
 
-	 bool facingRight = true;
+    bool facingRight = true;
 
     void Awake()
     {
@@ -35,51 +35,69 @@ public class PriestBehaviour : MonoBehaviour
     }
 
     // Use this for initialization
-	 void Start () {
-		 initPosition = transform.position;
-		 Vector3 targetPosition = initPosition + movement;
-		 state = PriestState.Patrol;
+    void Start()
+    {
+        initPosition = transform.position;
+        Vector3 targetPosition = initPosition + movement;
+        state = PriestState.Patrol;
 
-		 Sequence patrolSequence = DOTween.Sequence();
-		 patrolSequence
-			.Append( transform.DOMove( movement + initPosition, movementDuration ) )
-			.Append( transform.DORotate( new Vector3( 0, 0, 0 ), rotationDuration ) )
-			.AppendCallback( () => { facingRight = false; })
-			.Append( transform.DOMove( initPosition, movementDuration ) )
-			.Append( transform.DORotate( new Vector3( 0, 180, 0 ), rotationDuration ) )
-			.AppendCallback( () => { facingRight = true; });
+        Sequence patrolSequence = DOTween.Sequence();
+        patrolSequence
+           .Append(transform.DOMove(movement + initPosition, movementDuration))
+           .Append(transform.DORotate(new Vector3(0, 0, 0), rotationDuration))
+           .AppendCallback(() => { facingRight = false; })
+           .Append(transform.DOMove(initPosition, movementDuration))
+           .Append(transform.DORotate(new Vector3(0, 180, 0), rotationDuration))
+           .AppendCallback(() => { facingRight = true; });
 
-		 patrolSequence.SetLoops( -1, LoopType.Restart );
+        patrolSequence.SetLoops(-1, LoopType.Restart);
 
-		 patrolSequence.SetTarget( transform );
-		 transform.DOPlay();
+        patrolSequence.SetTarget(transform);
+        transform.DOPlay();
 
-		 Debug.Log(transform.GetComponent<Collider2D>().bounds.max.y);
-	 }
+        Debug.Log(transform.GetComponent<Collider2D>().bounds.max.y);
+    }
 
-	 void SwitchFaceDir ( int index ) {
-		 transform.DORotate( new Vector3( 0, 0, index * 180 ), 2.0f, RotateMode.Fast );
-	 }
+    void SwitchFaceDir(int index)
+    {
+        transform.DORotate(new Vector3(0, 0, index * 180), 2.0f, RotateMode.Fast);
+    }
 
-	void FlipX( bool x) {
-		x = !x; 
-	}
-	
+    void FlipX(bool x)
+    {
+        x = !x;
+    }
+
     void Update()
     {
-		 Vector3 raycastDirection = (facingRight) ? Vector3.right :-Vector3.right;
+        Vector3 raycastDirection = (facingRight) ? Vector3.right : -Vector3.right;
+        float maxY = gameObject.GetComponent<Collider2D>().bounds.max.y - 1;
+        float minY = gameObject.GetComponent<Collider2D>().bounds.min.y + 1;
 
-		 for (int i = 3; i < 0; i--) {
-			 Debug.Log( "Vlim" );
-			 RaycastHit2D hit = Physics2D.Raycast( new Vector2( transform.position.x, transform.position.y ), raycastDirection, distanceDetec, playerMask );
+      
+            RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), raycastDirection, distanceDetec, playerMask);
+            if (hit == null || hit.collider == null)
+            {
+                hit = Physics2D.Raycast(new Vector2(transform.position.x, maxY), raycastDirection, distanceDetec, playerMask);
+                if (hit == null || hit.collider == null)
+                {
+                    hit = Physics2D.Raycast(new Vector2(transform.position.x, minY), raycastDirection, distanceDetec, playerMask);
+                    if (hit == null || hit.collider == null)
+                    {
 
-			 if (hit != null && hit.collider != null) {
-				 transform.DOPause();
-				 StartCoroutine( Attack() );
-			 } else {
-				 transform.DOPlay();
-			 }
-		 }
+                    }
+                }
+            }
+
+            if (hit != null && hit.collider != null)
+            {
+                transform.DOPause();
+                StartCoroutine(Attack());
+            }
+            else
+            {
+                transform.DOPlay();
+            }
     }
 
     IEnumerator Attack()
@@ -92,11 +110,12 @@ public class PriestBehaviour : MonoBehaviour
                 // Auto-fire
                 if (weapon != null && weapon.CanAttack)
                 {
-                    weapon.Attack(true);
+                    Vector3 raycastDirection = (facingRight) ? Vector3.right : -Vector3.right;
+                    weapon.Attack(true, facingRight);
                     yield return new WaitForSeconds(1);
-                    weapon.Attack(true);
+                    weapon.Attack(true, facingRight);
                     yield return new WaitForSeconds(1);
-                    weapon.Attack(true);
+                    weapon.Attack(true, facingRight);
                     convertable = true;
                     yield return new WaitForSeconds(3);
                     convertable = false;
