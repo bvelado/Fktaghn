@@ -1,0 +1,324 @@
+fileFormatVersion: 2
+guid: d339be040855af54ebad318ef63a59b9
+timeCreated: 1450122007
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Auiles
+    100002: Auiles001
+    100004: Bone001
+    100006: Bone002
+    100008: Bone005
+    100010: Bone007
+    100012: Bone008
+    100014: Bone009
+    100016: Bone010
+    100018: Bone011
+    100020: Bones_Head
+    100022: Bones_Tentacle_1_006
+    100024: Bones_Tentacle_1_007
+    100026: Bones_Tentacle_1_008
+    100028: Bones_Tentacle_1_009
+    100030: Bones_Tentacle_1_01
+    100032: Bones_Tentacle_1_010
+    100034: Bones_Tentacle_1_011
+    100036: Bones_Tentacle_1_012
+    100038: Bones_Tentacle_1_013
+    100040: Bones_Tentacle_1_014
+    100042: Bones_Tentacle_1_015
+    100044: Bones_Tentacle_1_016
+    100046: Bones_Tentacle_1_017
+    100048: Bones_Tentacle_1_018
+    100050: Bones_Tentacle_1_019
+    100052: Bones_Tentacle_1_02
+    100054: Bones_Tentacle_1_020
+    100056: Bones_Tentacle_1_021
+    100058: Bones_Tentacle_1_022
+    100060: Bones_Tentacle_1_023
+    100062: Bones_Tentacle_1_024
+    100064: Bones_Tentacle_1_025
+    100066: Bones_Tentacle_1_026
+    100068: Bones_Tentacle_1_027
+    100070: Bones_Tentacle_1_028
+    100072: Bones_Tentacle_1_029
+    100074: Bones_Tentacle_1_03
+    100076: Bones_Tentacle_1_030
+    100078: Bones_Tentacle_1_031
+    100080: Bones_Tentacle_1_032
+    100082: Bones_Tentacle_1_033
+    100084: Bones_Tentacle_1_034
+    100086: Bones_Tentacle_1_035
+    100088: Bones_Tentacle_1_04
+    100090: Bones_Tentacle_1_05
+    100092: Box001
+    100094: DMy_Master_Head
+    100096: Eye_L
+    100098: Eye_R
+    100100: //RootNode
+    100102: Octhulhu
+    400000: Auiles
+    400002: Auiles001
+    400004: Bone001
+    400006: Bone002
+    400008: Bone005
+    400010: Bone007
+    400012: Bone008
+    400014: Bone009
+    400016: Bone010
+    400018: Bone011
+    400020: Bones_Head
+    400022: Bones_Tentacle_1_006
+    400024: Bones_Tentacle_1_007
+    400026: Bones_Tentacle_1_008
+    400028: Bones_Tentacle_1_009
+    400030: Bones_Tentacle_1_01
+    400032: Bones_Tentacle_1_010
+    400034: Bones_Tentacle_1_011
+    400036: Bones_Tentacle_1_012
+    400038: Bones_Tentacle_1_013
+    400040: Bones_Tentacle_1_014
+    400042: Bones_Tentacle_1_015
+    400044: Bones_Tentacle_1_016
+    400046: Bones_Tentacle_1_017
+    400048: Bones_Tentacle_1_018
+    400050: Bones_Tentacle_1_019
+    400052: Bones_Tentacle_1_02
+    400054: Bones_Tentacle_1_020
+    400056: Bones_Tentacle_1_021
+    400058: Bones_Tentacle_1_022
+    400060: Bones_Tentacle_1_023
+    400062: Bones_Tentacle_1_024
+    400064: Bones_Tentacle_1_025
+    400066: Bones_Tentacle_1_026
+    400068: Bones_Tentacle_1_027
+    400070: Bones_Tentacle_1_028
+    400072: Bones_Tentacle_1_029
+    400074: Bones_Tentacle_1_03
+    400076: Bones_Tentacle_1_030
+    400078: Bones_Tentacle_1_031
+    400080: Bones_Tentacle_1_032
+    400082: Bones_Tentacle_1_033
+    400084: Bones_Tentacle_1_034
+    400086: Bones_Tentacle_1_035
+    400088: Bones_Tentacle_1_04
+    400090: Bones_Tentacle_1_05
+    400092: Box001
+    400094: DMy_Master_Head
+    400096: Eye_L
+    400098: Eye_R
+    400100: //RootNode
+    400102: Octhulhu
+    2300000: Box001
+    2300002: Eye_L
+    2300004: Eye_R
+    3300000: Box001
+    3300002: Eye_L
+    3300004: Eye_R
+    4300000: Octhulhu
+    4300002: Auiles
+    4300004: Auiles001
+    4300006: Eye_R
+    4300008: Eye_L
+    4300010: Box001
+    7400000: Jump_old
+    9500000: //RootNode
+    13700000: Auiles
+    13700002: Auiles001
+    13700004: Octhulhu
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Jump_old
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 35
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Auiles
+        weight: 1
+      - path: Auiles001
+        weight: 1
+      - path: Box001
+        weight: 1
+      - path: DMy_Master_Head
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bone001
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bone001/Bone002
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bone001/Bone005
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bone001/Bone007
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bone008
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bone008/Bone009
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bone008/Bone010
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bone008/Bone011
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_01
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_01/Bones_Tentacle_1_02
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_01/Bones_Tentacle_1_02/Bones_Tentacle_1_03
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_01/Bones_Tentacle_1_02/Bones_Tentacle_1_03/Bones_Tentacle_1_04
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_01/Bones_Tentacle_1_02/Bones_Tentacle_1_03/Bones_Tentacle_1_04/Bones_Tentacle_1_05
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_006
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_006/Bones_Tentacle_1_007
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_006/Bones_Tentacle_1_007/Bones_Tentacle_1_008
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_006/Bones_Tentacle_1_007/Bones_Tentacle_1_008/Bones_Tentacle_1_009
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_006/Bones_Tentacle_1_007/Bones_Tentacle_1_008/Bones_Tentacle_1_009/Bones_Tentacle_1_010
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_011
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_011/Bones_Tentacle_1_012
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_011/Bones_Tentacle_1_012/Bones_Tentacle_1_013
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_011/Bones_Tentacle_1_012/Bones_Tentacle_1_013/Bones_Tentacle_1_014
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_011/Bones_Tentacle_1_012/Bones_Tentacle_1_013/Bones_Tentacle_1_014/Bones_Tentacle_1_015
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_016
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_016/Bones_Tentacle_1_017
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_016/Bones_Tentacle_1_017/Bones_Tentacle_1_018
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_016/Bones_Tentacle_1_017/Bones_Tentacle_1_018/Bones_Tentacle_1_019
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_016/Bones_Tentacle_1_017/Bones_Tentacle_1_018/Bones_Tentacle_1_019/Bones_Tentacle_1_020
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_021
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_021/Bones_Tentacle_1_035
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_021/Bones_Tentacle_1_035/Bones_Tentacle_1_031
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_021/Bones_Tentacle_1_035/Bones_Tentacle_1_031/Bones_Tentacle_1_030
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_021/Bones_Tentacle_1_035/Bones_Tentacle_1_031/Bones_Tentacle_1_030/Bones_Tentacle_1_032
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_033
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_033/Bones_Tentacle_1_022
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_033/Bones_Tentacle_1_022/Bones_Tentacle_1_029
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_033/Bones_Tentacle_1_022/Bones_Tentacle_1_029/Bones_Tentacle_1_024
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_033/Bones_Tentacle_1_022/Bones_Tentacle_1_029/Bones_Tentacle_1_024/Bones_Tentacle_1_023
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_034
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_034/Bones_Tentacle_1_027
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_034/Bones_Tentacle_1_027/Bones_Tentacle_1_025
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_034/Bones_Tentacle_1_027/Bones_Tentacle_1_025/Bones_Tentacle_1_028
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Bones_Tentacle_1_034/Bones_Tentacle_1_027/Bones_Tentacle_1_025/Bones_Tentacle_1_028/Bones_Tentacle_1_026
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Eye_L
+        weight: 1
+      - path: DMy_Master_Head/Bones_Head/Eye_R
+        weight: 1
+      - path: Octhulhu
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

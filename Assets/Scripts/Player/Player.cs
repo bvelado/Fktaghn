@@ -59,6 +59,7 @@ public class Player : MonoBehaviour {
 	void Update() {
 		Vector2 input = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
 		int wallDirX = (controller.collisions.left) ? -1 : 1;
+
         if (controller.collisions.faceDir == -1) {
             avatar.transform.localEulerAngles = (new Vector3(0, 180));
         } else {
