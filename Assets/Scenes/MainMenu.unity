@@ -1949,8 +1949,6 @@ MonoBehaviour:
   CenterPanel: {fileID: 1789420820}
   OptionsPanel: {fileID: 888219368}
   CreditsPanel: {fileID: 1640074348}
-  volumeSlider: {fileID: 76363906}
-  checkMute: {fileID: 1411770155}
 --- !u!224 &1564628990
 RectTransform:
   m_ObjectHideFlags: 0

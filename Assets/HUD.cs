@@ -11,7 +11,7 @@ public class HUD : MonoBehaviour {
 
     public void OnClickResume()
     {
-        GameController.Instance.ResumeGame();
+     //   GameController.Instance.ResumeGame();
     }
 
     public void OnClickMainMenu()
