@@ -70,7 +70,6 @@ public class PriestBehaviour : MonoBehaviour
 
     void Update()
     {
-<<<<<<< HEAD
         Vector3 raycastDirection = (facingRight) ? Vector3.right : -Vector3.right;
         float maxY = gameObject.GetComponent<Collider2D>().bounds.max.y - 1;
         float minY = gameObject.GetComponent<Collider2D>().bounds.min.y + 1;
@@ -99,23 +98,6 @@ public class PriestBehaviour : MonoBehaviour
             {
                 transform.DOPlay();
             }
-=======
-		 Vector3 raycastDirection = (facingRight) ? Vector3.right :-Vector3.right;
-
-		 Debug.DrawRay( transform.position, raycastDirection );
-
-		 for (int i = 3; i < 0; i--) {
-			 Debug.Log( "Vlim" );
-			 RaycastHit2D hit = Physics2D.Raycast( new Vector2( transform.position.x, transform.position.y ), raycastDirection, distanceDetec, playerMask );
-
-			 if (hit != null && hit.collider != null) {
-				 transform.DOPause();
-				 StartCoroutine( Attack() );
-			 } else {
-				 transform.DOPlay();
-			 }
-		 }
->>>>>>> origin/master
     }
 
     IEnumerator Attack()
