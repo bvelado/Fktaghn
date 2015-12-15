@@ -72,13 +72,13 @@ public class HUDGame : MonoBehaviour {
 
     public void CloseGameMenu()
     {
-		 ResumeGame();
+		 MenuPanel.SetActive( false );
     }
 
     public void ResumeGame()
     {
-        CloseGameMenu();
-        Play();
+		 Play(); 
+		 CloseGameMenu();
     }
 
     public void Pause()
