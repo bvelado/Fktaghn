@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class ProjectileParabolic : MonoBehaviour {
 
     public Vector2 DirectionTirRight = new Vector2(3, 3);
     public bool directionShootIsRight = true;
 
+
+	
 
 	// Use this for initialization
     void Start()

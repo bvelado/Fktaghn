@@ -57,14 +57,6 @@ public class Weapon : MonoBehaviour
             // Assign position
             shotTransform.position = transform.position;
 
-            // The is enemy property
-            ShotScript shot = shotTransform.gameObject.GetComponent<ShotScript>();
-            if (shot != null)
-            {
-                shot.isEnemyShot = isEnemy;
-                
-            }
-
             // Make the weapon shot always towards it
             ProjectileParabolic move = shotTransform.gameObject.GetComponent<ProjectileParabolic>();
             if (move != null)
