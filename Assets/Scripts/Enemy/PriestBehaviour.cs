@@ -45,10 +45,10 @@ public class PriestBehaviour : MonoBehaviour
         patrolSequence
            .Append(transform.DOMove(movement + initPosition, movementDuration))
            .Append(transform.DORotate(new Vector3(0, 0, 0), rotationDuration))
-           .AppendCallback(() => { facingRight = false; })
+           .AppendCallback(() => { facingRight = true; })
            .Append(transform.DOMove(initPosition, movementDuration))
            .Append(transform.DORotate(new Vector3(0, 180, 0), rotationDuration))
-           .AppendCallback(() => { facingRight = true; });
+           .AppendCallback(() => { facingRight = false; });
 
         patrolSequence.SetLoops(-1, LoopType.Restart);
 

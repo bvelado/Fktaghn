@@ -3,6 +3,8 @@
 /// <summary>
 /// Simply moves the current game object
 /// </summary>
+
+[RequireComponent(typeof(Rigidbody2D))]
 public class ProjectileLine : MonoBehaviour
 {
     public Vector2 DirectionTirRight = new Vector2(10, -5);

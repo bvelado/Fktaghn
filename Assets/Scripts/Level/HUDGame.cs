@@ -13,6 +13,7 @@ public class HUDGame : MonoBehaviour {
 	}
 
     public GameObject MenuPanel;
+	 public GameObject FlashPanel;
 	 public GameObject[] lives;
 
 	 public Sprite lostLifeSprite;
@@ -94,10 +95,17 @@ public class HUDGame : MonoBehaviour {
 
     public void loseLife()
     {
+
 		 lives[livesLost].GetComponent<Image>().overrideSprite = lostLifeSprite;
 		 livesLost++;
+		 StartCoroutine( FeedbackTookDamage() );
     }
 
+	 IEnumerator FeedbackTookDamage () {
+		 FlashPanel.SetActive( true );
+		 yield return new WaitForSeconds( 3.0f );
+		 FlashPanel.SetActive( false );
+	 }
 
     //----------------------------------Pause
     public void OnClickResume()
