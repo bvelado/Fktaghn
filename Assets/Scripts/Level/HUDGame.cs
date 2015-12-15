@@ -1,27 +1,38 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class HUDGame : MonoBehaviour {
 
-    public GameObject MenuPause, OptionsPanel, CreditsPanel, Title, HUDLife;
+	private static HUDGame instance;
+	public static HUDGame Instance {
+		get {
+			return instance;
+		}
+	}
+
+    public GameObject MenuPanel;
+	 public GameObject[] lives;
+
+	 public Sprite lostLifeSprite;
+
     bool isGameMenuOpen = false;
-    void OnAwake()
-    {
 
-        OptionsPanel.SetActive(false);
-        CreditsPanel.SetActive(false);
-        MenuPause.SetActive(false);
-        Title.SetActive(false);
+	 int livesLost = 0;
+
+    void Awake()
+    {
+		 if (instance == null) {
+			 instance = this;
+		 } else {
+			 Destroy( this );
+		 }
     }
 
-    void start()
-    {
-
-        OptionsPanel.SetActive(false);
-        CreditsPanel.SetActive(false);
-        MenuPause.SetActive(false);
-        Title.SetActive(false);
-    }
+	 void Start () {
+	 
+	 }
 
     void Update()
     {
@@ -43,14 +54,12 @@ public class HUDGame : MonoBehaviour {
     public void OpenGameMenu()
     {
         Pause();
-        Title.SetActive(true);
-        MenuPause.SetActive(true);
+        MenuPanel.SetActive(true);
     }
 
     public void CloseGameMenu()
     {
-        Play();
-        OnClickBack();
+		 ResumeGame();
     }
 
     public void ResumeGame()
@@ -71,36 +80,25 @@ public class HUDGame : MonoBehaviour {
 
     //----------------------------------Life manager
 
-    public void loseLife
+    public void loseLife()
     {
-
+		 lives[livesLost].GetComponent<Image>().overrideSprite = lostLifeSprite;
+		 livesLost++;
     }
 
 
     //----------------------------------Pause
-    public void OnClickContinue()
+    public void OnClickResume()
     {
-        CloseGameMenu();
+		 ResumeGame();
     }
 
-    public void OnClickBack()
-    {
-        OptionsPanel.SetActive(false);
-        CreditsPanel.SetActive(false);
-        MenuPause.SetActive(false);
-        Title.SetActive(false);
-    }
+	 public void OnClickMainMenu () {
+		 GameController.Instance.GoToMainMenu();
+	 }
 
-    public void OnClickOptions()
+    public void OnClickExit()
     {
-        MenuPause.SetActive(false);
-        OptionsPanel.SetActive(true);
-
-    }
-
-    public void OnClickCredits()
-    {
-        MenuPause.SetActive(false);
-        CreditsPanel.SetActive(true);
+		 Application.Quit();
     }
 }
