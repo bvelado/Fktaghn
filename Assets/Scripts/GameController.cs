@@ -25,7 +25,8 @@ public class GameController : MonoBehaviour {
 
 	void Start () {
 		currentlevel = SceneManager.GetActiveScene().buildIndex;
-      print("Top à la vachette");
+
+		GameMenuCanvas = GameObject.FindObjectOfType<Canvas>().gameObject;
 	}
     
   
@@ -78,6 +79,6 @@ public class GameController : MonoBehaviour {
     }
 
 	 public void RestartLevel () {
-		 LoadSpecificLevel( currentlevel );
+		 SceneManager.LoadScene( currentlevel );
 	 }
 }
