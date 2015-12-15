@@ -31,7 +31,7 @@ public class MenuManager : MonoBehaviour {
 
    public void OnClickNewGame()
    {
-       GameController.Instance.LoadSpecificLevel(1);
+       GameController.Instance.Next();
    }
 
    public void OnClickOptions()

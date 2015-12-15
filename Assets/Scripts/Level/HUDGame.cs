@@ -31,7 +31,19 @@ public class HUDGame : MonoBehaviour {
     }
 
 	 void Start () {
-	 
+		 if (MenuPanel == null) {
+			 MenuPanel = GameObject.Find( "GameMenuPanel" );
+		 }
+		 if (lives == null || lives.Length == 0) {
+			 RectTransform LivesPanel = GameObject.Find( "LifePanel" ).GetComponent<RectTransform>();
+			 lives = new GameObject[3];
+			 for (int i = 0; i > 2 ;i++) {
+				 lives[i] = LivesPanel.FindChild( "Life"+i ).gameObject;
+				 Debug.Log( lives[i].name );
+			 }
+		 }
+
+		 GetComponent<Canvas>().worldCamera = Camera.main;
 	 }
 
     void Update()
